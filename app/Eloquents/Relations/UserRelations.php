@@ -26,6 +26,11 @@ trait UserRelations
         return $this->hasMany(OrderBooking::class);
     }
 
+    public function OrderBookings()
+    {
+        return $this->hasMany(OrderBooking::class);
+    }
+
     public function getStylistInDepartment()
     {
         return $this->belongsTo(Department::class, 'department_id');
@@ -41,7 +46,7 @@ trait UserRelations
         return $this->hasMany(BillItem::class, 'stylist_id');
     }
     
-    public function getImages()
+    public function Images()
     {
         return $this->morphMany(Media::class, 'media_table');
     }
